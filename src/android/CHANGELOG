@@ -1,0 +1,138 @@
+-------------------------
+489 - September 3, 2014
+-------------------------
+- Minor bug fix to Region Minoring to support regions that expire far into the future.
+- Minor update to server defined configurations for more efficient batch sizes.
+
+-------------------------
+473 - July 31, 2014
+-------------------------
+- Performance improvement to Region Monitoring reporting.
+
+-------------------------
+472 - July 30, 2014
+-------------------------
+- Added in optional support for Region Monitoring Beta. Requires the Google Play Services library and ACCESS_FINE_LOCATION permissions.
+
+-------------------------
+470 - July 25, 2014
+-------------------------
+- Placed all API calls into a background executor service to drastically reduce any latency when making calls on the UI thread.
+
+-------------------------
+466 - July 17, 2014
+-------------------------
+- Minor bug fix when handling In-App messages that may have expired if received while the app is in the foreground
+- Added in more efficient batching of requests for conversion campaigns.
+
+-------------------------
+461 - July 8, 2014
+-------------------------
+- Minor bug fix when handling server defined configurations to better control which events  should be flushed to the Kahuna servers much more quickly.
+- Added in minor upgrade code to remove older, less efficient configuration.
+
+-------------------------
+459 - June 26, 2014
+-------------------------
+- Minor bug fix to better handle integrations that do not initialize the SDK properly. Prevents timing related crashes.
+
+-------------------------
+442 - June 9, 2014
+-------------------------
+- Added in support to allow integrations to specify the "WAKE_LOCK" permission as optional.
+- Minor bug fix when merging events tracked before the first start() call to the SDK.
+
+-------------------------
+437 - May 30, 2014
+-------------------------
+- Added in support for integration test feature 'Find My Device'
+- Added in support for obtaining user timezone and language preferences for better campaign targeting.
+
+-------------------------
+404 - April 25, 2014
+-------------------------
+- Added in new API to support Kahuna In-App Messaging feature.
+
+-------------------------
+403 - April 23, 2014
+-------------------------
+- Added in helper API to request for the current Push enabled state of the SDK.
+- Added in support for dynamic, server controlled SDK configurations to support trigger campaigns and allow more efficient batching.
+
+-------------------------
+394 - March 31, 2014
+-------------------------
+- Added in new optional API to prevent the SDK from generate the status notification when receiving a Kahuna Push. This gives the developer ability to generate and display custom layouts for notifications.
+- Fixed minor bug when receiving empty push message payloads.
+
+-------------------------
+390 - March 24, 2014
+-------------------------
+- Reduced some network traffic by reducing payload sizes.
+- Added in new optional API to allow the SDK to hide pushes received from Kahuna if your app is already in the foreground.
+
+-------------------------
+359 - February 18, 2014
+-------------------------
+- Bug fix for better identification and showing of Kahuna only Push notifications.
+- Added in new API method for getting Kahuna DeviceId.
+- Added in new API method for getting the GCM Push Token.
+
+-------------------------
+283 - November 6, 2013
+-------------------------
+- Added in regular flushing of cached User Credentials to the Kahuna Servers to aid in any server side data repairs should they arise.
+- Added in 1000 count limit to event archiving.
+
+-------------------------
+276 - October 21, 2013
+-------------------------
+- Fixed minor bug to hide notifications locally if the user disables push even if they arrive in the client in some cases.
+
+-------------------------
+246 - August 27, 2013
+-------------------------
+- Added in extra Bundle when invoking Broadcast Receiver to support extra values to be received when a Push is configured. Also added in BroadcastReceiver Action PUSH_RECEIVED so an app can also be notified of a received Kahuna push in addition to receiving a Broadcast when a Push is Clicked as well.
+
+-------------------------
+231 - August 5, 2013
+-------------------------
+- Added in support for allowing push messages to stack for an application based on server metadata.
+
+-------------------------
+225 - July 23, 2013
+-------------------------
+- Added in support for auto expandable notifications for Android 4.1+ devices. Requires Support library.
+
+-------------------------
+223 - July 11, 2013
+-------------------------
+- Changed SDK Production Url target.
+
+-------------------------
+221 - July 1, 2013
+-------------------------
+- Added in new API method "disableKahunaPushLaunchApp()" to disable the Kahuna SDK from launching the application on behalf of user. This is done incase a user wishes to launch a separate activity when a push is clicked instead of the main activity.
+- Also fixed minor bug related to landingPage id parsing on some Android devices.
+
+-------------------------
+219 - June 19, 2013
+-------------------------
+- Added in new API method "setIconResourceId()" to set custom status notification icon when receiving Android Push messages.
+
+-------------------------
+216 - June 7, 2013
+-------------------------
+- Added internal unique identifies to each event for better tracking across similar named/timed events.
+
+-------------------------
+212 - May 24, 2013
+-------------------------
+- Added in new API method "setUsernameAndEmail()" to help new integrators ease
+  into implementation and verify with new checks in the gettingStarted Guide. Existing integrations
+  can continue using "setUserCredential()" API for their existing user credential handling.
+
+-------------------------
+202 - May 4, 2013
+-------------------------
+- First release of Kahuna Android SDK.
