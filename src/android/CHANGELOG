@@ -1,4 +1,28 @@
 -------------------------
+520 - January 7, 2015
+-------------------------
+- Minor bug fix to configuration handling to persistent config changes immediately instead of on background only.
+- Added in payload checksums to further improve data integrity across devices which exhibit memory issues.
+
+-------------------------
+516 - December 12, 2014
+-------------------------
+- Updated Region Monitoring implementation to support latest Google Play Services 6.5.
+- Fixed bug in Region Monitoring to ensure Regions are correctly re-registered after device reboot.
+
+-------------------------
+514 - December 2, 2014
+-------------------------
+- More performance and network improvements.
+- Added ability to remap events within the SDK based on account configuration.
+
+-------------------------
+510 - November 6, 2014
+-------------------------
+- Performance improvement to User Attributes tracking.
+- Removed very old deprecated APIs.
+
+-------------------------
 489 - September 3, 2014
 -------------------------
 - Minor bug fix to Region Minoring to support regions that expire far into the future.

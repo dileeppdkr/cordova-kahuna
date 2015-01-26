@@ -1,12 +1,14 @@
 //
 //  KahunaAnalytics.h
 //  KahunaSDK
-//  Required iOS Frameworks: SystemConfiguration.framework
 //
-//  Copyright (c) 2012-2014 Kahuna. All rights reserved.
+//  Copyright (c) 2012-2015 Kahuna. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
+#import <SystemConfiguration/SystemConfiguration.h>
 
 static NSString* const KAHUNA_CREDENTIAL_USERNAME = @"username";
 static NSString* const KAHUNA_CREDENTIAL_EMAIL = @"email";
@@ -22,20 +24,6 @@ typedef enum {
 typedef enum {
     KAHRegionMonitoringServices     = 1 << 0    // This monitors for regions (circular) to find if a user enters or exits a region.
 } KAHLocationServicesFeatures;
-
-/*
-//Delegate to notify of any recieved Kahuna Push Notification Messages.
-__attribute__((deprecated("use delegate 'KahunaDelegate' instead")))
-@protocol KahunaPushNotificationDelegate <NSObject>
-    //NOTE: Push Received with Layout ID will be deprecated. You should use
-    //      Push Received with Dictionary instead for your own custom extras.
-    @optional
-    - (void) kahunaPushReceived: (NSString *) message
-                   withLayoutId: (NSNumber *) layoutId __attribute__((deprecated("use method 'pushReceived:withDictionary:' instead")));
-    - (void) kahunaPushReceived: (NSString *) message
-                 withDictionary: (NSDictionary *) extras;
-@end
-*/
 
 // Delegate for all Kahuna callbacks.
 @protocol KahunaDelegate <NSObject>
@@ -55,20 +43,25 @@ __attribute__((deprecated("use delegate 'KahunaDelegate' instead")))
 
 + (id) sharedAnalytics;
 
-//Start Kahuna and Track Events
+//Start Kahuna with Key
 + (void) startWithKey: (NSString *) kahunaSecretKey;
 
+//Start Kahuna with Key and UserName and Email
 + (void) startWithKey: (NSString *) kahunaSecretkey
           andUsername: (NSString *) username
              andEmail: (NSString *) email;
 
+//Start Kahuna with Key and Credentials
 + (void) startWithKey: (NSString *) kahunaSecretkey
        andCredentials: (NSDictionary *)userCredentials;
 
+//Track Event
 + (void) trackEvent: (NSString *) eventString;
+
+//Track Event with Count and Value (This is used for eCommerce transactions)
 + (void) trackEvent: (NSString *) eventString
-          withCount: (int) count
-           andValue: (int) value;
+          withCount: (long) count
+           andValue: (long) value;
 
 //Add User Credentials
 + (void) setUserCredentialsWithKey: (NSString *) key
@@ -104,7 +97,7 @@ __attribute__((deprecated("use delegate 'KahunaDelegate' instead")))
        withActionIdentifier: (NSString*) actionIdentifier
        withApplicationState: (UIApplicationState) appState;
 
-//To see more detailed logging in console log, set to to YES before calling start.
+//To see more detailed logging in console log, set to YES before calling start.
 + (void) setDebugMode : (Boolean) setting;
 
 //Get the Kahuna specific device identifier for this device.
@@ -139,7 +132,9 @@ __attribute__((deprecated("use delegate 'KahunaDelegate' instead")))
  * disbleLocationMonitoring as this will turn off the feature completely. A typical usage of this API would be to show a user settings view, where the user can 
  * switch ON and OFF the feature they want / don't want.
  */
-+ (void) disbleLocationServices:(KAHLocationServicesFeatures)features;
++ (void) disbleLocationServices:(KAHLocationServicesFeatures)features __attribute__((deprecated("use method 'disableLocationServices' instead")));
+
++ (void) disableLocationServices:(KAHLocationServicesFeatures)features;
 
 #pragma mark - METHODS FOR SDK WRAPPERS ONLY
 /*

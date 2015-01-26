@@ -1,4 +1,41 @@
 -------------------------
+520 - January 8, 2015
+-------------------------
+- Code optimizations.
+
+-------------------------
+514 - December 2, 2014
+-------------------------
+- Traffic Shaping enhancements phase II.
+
+-------------------------
+512 - November 14, 2014
+-------------------------
+- Enhancements and error checking for server transactions.
+
+-------------------------
+511 - November 14, 2014
+-------------------------
+- Traffic Shaping enhancements.
+
+-------------------------
+510 - November 6, 2014
+-------------------------
+- Collating user attributes once per batch to reduce network payload sizes.
+- KahunaPushNotificationDelegate removed in favor of the new KahunaDelegate. This
+  change was done in SDK 466 itself.
+
+-------------------------
+503 - October 15, 2014
+-------------------------
+- Added region monitoring improvements to locate users inside a region.
+
+-------------------------
+498 - October 1, 2014
+-------------------------
+- Added backward compatibility fix for iOS6 devices.
+
+-------------------------
 496 - September 16, 2014
 -------------------------
 - Minor bug fix to Region Minoring to support regions that expire far into the future.
