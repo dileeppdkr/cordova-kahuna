@@ -17,6 +17,7 @@
  *
  * Kahuna PhoneGap JS Library (Beta)
  */
+var cordova = require('cordova');
 
 function Kahuna() {};
 
