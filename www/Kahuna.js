@@ -34,6 +34,7 @@ Kahuna.prototype.startWithKey = function(key, senderId) {
  * Should be called from the 'onResume' event handler from index.js
  */
 Kahuna.prototype.onStart = function() {
+	console.log('Kahuna onStart');
 	cordova.exec(function() {}, function() {}, 'Kahuna', 'onStart', []);
 };
 
@@ -41,6 +42,7 @@ Kahuna.prototype.onStart = function() {
  * Should be called from the 'onPaused' event handler from index.js
  */
 Kahuna.prototype.onStop = function() {
+	console.log('Kahuna onStop');
 	cordova.exec(function() {}, function() {}, 'Kahuna', 'onStop', []);
 };
 
